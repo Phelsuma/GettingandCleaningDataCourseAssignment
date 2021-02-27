@@ -1,0 +1,146 @@
+---
+title: "codebook"
+author: "Peter Alexander"
+date: "2/26/2021"
+output: html_document
+---
+
+Data used in this analysis were downloaded from the 'Human Activity Recognition Using Smartphones Dataset'
+
+Raw data downloaded: [(<https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>)]{.ul}
+
+**Study design**
+
+The experimental design included measuring 30 particpants (between 19-48 years old) performing 6 activities (walking, walking upstairs, walking downstairs, sitting, standing, laying). A smartphone (Samsung Galaxy S II) worn on the participants waist was used to record the 3-axial linear acceleration (via embedded accelerometer) & 3-axial angular velocity (via embedded gyroscope) at a constant rate of 50Hz.
+
+Source:[(<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>)]{.ul}
+
+**Code Book - data analysis**
+
+Data transformation & proccessing
+
+1)  Data were first combined into a single dataset by combining the activity & subject datasets from both the test & train trials. This was then concatenated into a single dataframe with the feature data.
+
+2)  The data were then subsetted to extract only the metrics we are interested in, the mean & standard deviation, per the assignment prompt.
+
+3)  Activity variables were renamed for descriptive purposes.
+
+4)  Feature measurement variable names were subsequently modified for simplicity & clarification.
+
+5)  A seperate tidy dataset (tidy.txt) file was created summarizing the dataset by grouping the mean of each activity for each subject. Dimensions of tidydata (class: dataframe) dim[180,88]
+
+**Variables**
+
+[subject] - Participants in the study (class: integer)
+
+[activity] - (ie, walking, walking upstairs, walking downstairs, sitting, standing, laying (class: string))
+
+training data stored in variables [xtrain], [ytrain], [subjecttrain]
+
+testing data stored in variables [xtest], [ytest], [subjecttest]
+
+[combined] is the complete dataset
+
+[datameansd] is the subset of data containing mean & std feature variables
+
+TidyData dataframe (tidy.txt)
+
+[1] "subject"
+
+[2] "activity"
+
+Feature measurement variables (mean & std values are class: numeric)
+
+[3] "timebodyaccelerometermeanX"\
+[4] "timebodyaccelerometermeanY"\
+[5] "timebodyaccelerometermeanZ"\
+[6] "timebodyaccelerometerstandarddeviationX"\
+[7] "timebodyaccelerometerstandarddeviationY"\
+[8] "timebodyaccelerometerstandarddeviationZ"\
+[9] "timegravityaccelerometermeanX"\
+[10] "timegravityaccelerometermeanY"\
+[11] "timegravityaccelerometermeanZ"\
+[12] "timegravityaccelerometerstandarddeviationX"\
+[13] "timegravityaccelerometerstandarddeviationY"\
+[14] "timegravityaccelerometerstandarddeviationZ"\
+[15] "timebodyaccelerometerjerkmeanX"\
+[16] "timebodyaccelerometerjerkmeanY"\
+[17] "timebodyaccelerometerjerkmeanZ"\
+[18] "timebodyaccelerometerjerkstandarddeviationX"\
+[19] "timebodyaccelerometerjerkstandarddeviationY"\
+[20] "timebodyaccelerometerjerkstandarddeviationZ"\
+[21] "timebodygyroscopemeanX"\
+[22] "timebodygyroscopemeanY"\
+[23] "timebodygyroscopemeanZ"\
+[24] "timebodygyroscopestandarddeviationX"\
+[25] "timebodygyroscopestandarddeviationY"\
+[26] "timebodygyroscopestandarddeviationZ"\
+[27] "timebodygyroscopejerkmeanX"\
+[28] "timebodygyroscopejerkmeanY"\
+[29] "timebodygyroscopejerkmeanZ"\
+[30] "timebodygyroscopejerkstandarddeviationX"\
+[31] "timebodygyroscopejerkstandarddeviationY"\
+[32] "timebodygyroscopejerkstandarddeviationZ"\
+[33] "timebodyaccelerometermagnitudemean"\
+[34] "timebodyaccelerometermagnitudestandarddeviation"\
+[35] "timegravityaccelerometermagnitudemean"\
+[36] "timegravityaccelerometermagnitudestandarddeviation"\
+[37] "timebodyaccelerometerjerkmagnitudemean"\
+[38] "timebodyaccelerometerjerkmagnitudestandarddeviation"\
+[39] "timebodygyroscopemagnitudemean"\
+[40] "timebodygyroscopemagnitudestandarddeviation"\
+[41] "timebodygyroscopejerkmagnitudemean"\
+[42] "timebodygyroscopejerkmagnitudestandarddeviation"\
+[43] "frequencybodyaccelerometermeanX"\
+[44] "frequencybodyaccelerometermeanY"\
+[45] "frequencybodyaccelerometermeanZ"\
+[46] "frequencybodyaccelerometerstandarddeviationX"\
+[47] "frequencybodyaccelerometerstandarddeviationY"\
+[48] "frequencybodyaccelerometerstandarddeviationZ"\
+[49] "frequencybodyaccelerometermeanfrequencyX"\
+[50] "frequencybodyaccelerometermeanfrequencyY"\
+[51] "frequencybodyaccelerometermeanfrequencyZ"\
+[52] "frequencybodyaccelerometerjerkmeanX"\
+[53] "frequencybodyaccelerometerjerkmeanY"\
+[54] "frequencybodyaccelerometerjerkmeanZ"\
+[55] "frequencybodyaccelerometerjerkstandarddeviationX"\
+[56] "frequencybodyaccelerometerjerkstandarddeviationY"\
+[57] "frequencybodyaccelerometerjerkstandarddeviationZ"\
+[58] "frequencybodyaccelerometerjerkmeanfrequencyX"\
+[59] "frequencybodyaccelerometerjerkmeanfrequencyY"\
+[60] "frequencybodyaccelerometerjerkmeanfrequencyZ"\
+[61] "frequencybodygyroscopemeanX"\
+[62] "frequencybodygyroscopemeanY"\
+[63] "frequencybodygyroscopemeanZ"\
+[64] "frequencybodygyroscopestandarddeviationX"\
+[65] "frequencybodygyroscopestandarddeviationY"\
+[66] "frequencybodygyroscopestandarddeviationZ"\
+[67] "frequencybodygyroscopemeanfrequencyX"\
+[68] "frequencybodygyroscopemeanfrequencyY"\
+[69] "frequencybodygyroscopemeanfrequencyZ"\
+[70] "frequencybodyaccelerometermagnitudemean"\
+[71] "frequencybodyaccelerometermagnitudestandarddeviation"\
+[72] "frequencybodyaccelerometermagnitudemeanfrequency"\
+[73] "frequencybodyaccelerometerjerkmagnitudemean"\
+[74] "frequencybodyaccelerometerjerkmagnitudestandarddeviation"
+
+[75] "frequencybodyaccelerometerjerkmagnitudemeanfrequency"\
+[76] "frequencybodygyroscopemagnitudemean"\
+[77] "frequencybodygyroscopemagnitudestandarddeviation"\
+[78] "frequencybodygyroscopemagnitudemeanfrequency"\
+[79] "frequencybodygyroscopejerkmagnitudemean"\
+[80] "frequencybodygyroscopejerkmagnitudestandarddeviation"\
+[81] "frequencybodygyroscopejerkmagnitudemeanfrequency"\
+[82] "angletbodyaccelerometermeangravity"\
+[83] "angletbodyaccelerometerjerkmeangravitymean"\
+[84] "angletbodygyroscopemeangravitymean"\
+[85] "angletbodygyroscopejerkmeangravitymean"\
+[86] "angleXgravitymean"\
+[87] "angleYgravitymean"\
+[88] "angleZgravitymean"
+
+**References**
+
+Study design & data source [(<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>)]{.ul}
+
+Troubleshooting [(<https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/>)]{.ul}
